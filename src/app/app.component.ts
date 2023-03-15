@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ApirestService } from './apirest.service';
+import { Client } from './client';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +10,16 @@ import { ApirestService } from './apirest.service';
 })
 export class AppComponent {
   title = 'springbootsecur';
+  
+  newClient: Client = { 'nom': 'VALLET',
+                        'prenom': 'Jean'};
 
   constructor(private api :ApirestService) {
     api.getAllUsers();
+    //api.createClient(this.newClient);
+  
   }
+
+
 }
 
