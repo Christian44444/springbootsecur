@@ -22,7 +22,10 @@ export class ApirestService {
   }
 
   public createClient(client :Client) {
-    return this.http.post<Client>(`http://localhost:8086/clients`, client, {headers : new HttpHeaders().set('x-auth-token', this.token)}).subscribe();
+    return this.http.post<Client>(`http://localhost:8086/api/client/`, client, {headers : new HttpHeaders().set('x-auth-token', this.token)}).subscribe();
+  }
+  public deleteClient(id :number) {
+    return this.http.delete<Client>(`http://localhost:8086/api/client/`+ id,  {headers : new HttpHeaders().set('x-auth-token', this.token)}).subscribe();
   }
 
 }

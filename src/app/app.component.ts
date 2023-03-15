@@ -16,10 +16,12 @@ export class AppComponent {
 
   constructor(private api :ApirestService) {
     api.getAllUsers();
-    //api.createClient(this.newClient);
-  
-  }
+    api.createClient(this.newClient);
 
+    api.deleteClient(7);
+  };
+
+  
 
 }
 
