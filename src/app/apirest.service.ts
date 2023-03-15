@@ -11,14 +11,13 @@ export class ApirestService {
   token = "";
 
   constructor(private http:HttpClient) {
-    this.http.get<{'token':''}>(urlToken).subscribe(data =>  this.token = data.token
-
-    );
+    //this.http.get<{'token':''}>(urlToken).subscribe(data =>  this.token = data.token);
   }
 
   getAllUsers() {
     //, {headers : new HttpHeaders().set('X-Auth-Token', this.token['token'])}
-    this.http.get(url, {headers : new HttpHeaders().set('X-Auth-Token', this.token)}).subscribe(data=>console.log(data))
+    // this.http.get(url, {headers : new HttpHeaders().set('X-Auth-Token', this.token)}).subscribe(data=>console.log(data))
+    this.http.get(url).subscribe();
   }
 }
 
